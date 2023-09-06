@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 10:51:29 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/22 13:42:57 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/06 13:07:05 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@
 
 class Weapon {
 
-	public:
+public:
 
-		Weapon(std::string type);
-		~Weapon(void);
+    Weapon(std::string type);
+    ~Weapon(void);
 
-		std::string getType(void) const;
-		void		setType(std::string type);
+    const std::string &getType(void) const;
+    void setType(std::string type);
 
-	private:
+private:
 
-		std::string	type;
+    std::string	type;
 
 };
 

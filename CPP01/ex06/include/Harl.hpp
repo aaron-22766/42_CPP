@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 10:51:29 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/24 11:12:00 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/06 15:55:21 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,23 @@
 
 class Harl {
 
-	public:
+public:
 
-		Harl(void);
-		~Harl(void);
+    Harl(void);
+    ~Harl(void);
 
-		static int	getLevelIndex(std::string level);
-		void		complain(std::string level);
-		void		complainFiltered(std::string filter);
+    void complain(std::string level);
+    void complainFiltered(std::string filter);
 
-	private:
+private:
 
-		void		debug(void);
-		void		info(void);
-		void		warning(void);
-		void		error(void);
+    int getLevelIndex(std::string level);
 
-		void		(Harl::*_levels[NB_LEVELS])(void);
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void);
+
 };
 
 #endif

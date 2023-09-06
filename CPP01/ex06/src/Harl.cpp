@@ -6,73 +6,74 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 11:42:32 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/24 11:14:39 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/06 16:16:28 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Harl.hpp"
 
-Harl::Harl(void) {
-	_levels[0] = &Harl::debug;
-	_levels[1] = &Harl::info;
-	_levels[2] = &Harl::warning;
-	_levels[3] = &Harl::error;
-}
+using std::cout;
+using std::clog;
+using std::endl;
+
+Harl::Harl(void) {}
 
 Harl::~Harl(void) {}
 
-int	Harl::getLevelIndex(std::string level) {
+int Harl::getLevelIndex(std::string level) {
 	std::string	level_names[NB_LEVELS] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	for (int i = 0; i < NB_LEVELS; i++) {
 		if (level == level_names[i]) {
-			return (i);
+            return (i);
 		}
 	}
-	return (-1);
+    return (-1);
 }
 
-void	Harl::complain(std::string level) {
-	(this->*_levels[Harl::getLevelIndex(level)])();
-	std::cout << std::endl;
+void Harl::complain(std::string level) {
+    void (Harl::*complain[NB_LEVELS])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    int levelIndex = Harl::getLevelIndex(level);
+
+    if (levelIndex < 0) {
+        std::cerr << "Invalid complain level!" << endl;
+    } else {
+        (this->*complain[levelIndex])();
+    }
 }
 
-void	Harl::complainFiltered(std::string filter) {
-	switch (Harl::getLevelIndex(filter))
-	{
-	case 0:
-		std::cout << "[ DEBUG ]" << std::endl;
-		complain("DEBUG");
-	case 1:
-		std::cout << "[ INFO ]" << std::endl;
-		complain("INFO");
-	case 2:
-		std::cout << "[ WARNING ]" << std::endl;
-		complain("WARNING");
-	case 3:
-		std::cout << "[ ERROR ]" << std::endl;
-		complain("ERROR");
-		break;
-	default:
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+void Harl::complainFiltered(std::string filter) {
+	switch (Harl::getLevelIndex(filter)) {
+        case 0:
+            complain("DEBUG");
+        case 1:
+            complain("INFO");
+        case 2:
+            complain("WARNING");
+        case 3:
+            complain("ERROR");
+            break;
+        default:
+            cout << "[ Probably complaining about insignificant problems ]" << endl;
 	}
 }
 
-void	Harl::debug(void) {
-	std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << std::endl;
+void Harl::debug(void) {
+    clog << "\033[2m[ DEBUG ]\033[0m" << endl;
+	cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-special-ketchup burger. I really do!" << endl << endl;
 }
 
-void	Harl::info(void) {
-	std::cout << "I cannot believe adding extra bacon costs more money." << std::endl;
-	std::cout << "You didn’t put enough bacon in my burger!" << std::endl;
-	std::cout << "If you did, I wouldn’t be asking for more!" << std::endl;
+void Harl::info(void) {
+    clog << "\033[2m[ INFO ]\033[0m" << endl;
+	cout << "I cannot believe adding extra bacon costs more money." << endl << "You didn’t put enough bacon in my burger!" << endl << "If you did, I wouldn’t be asking for more!" << endl << endl;
 }
 
-void	Harl::warning(void) {
-	std::cout << "I think I deserve to have some extra bacon for free." << std::endl;
-	std::cout << "I’ve been coming for years whereas you started working here since last month." << std::endl;
+void Harl::warning(void) {
+    clog << "\033[2m[ WARNING ]\033[0m" << endl;
+	cout << "I think I deserve to have some extra bacon for free." << endl << "I’ve been coming for years whereas you started working here since last month." << endl << endl;
 }
 
-void	Harl::error(void) {
-	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+void Harl::error(void) {
+    clog << "\033[2m[ ERROR ]\033[0m" << endl;
+	cout << "This is unacceptable! I want to speak to the manager now." << endl << endl;
 }

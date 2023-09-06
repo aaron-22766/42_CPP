@@ -6,15 +6,14 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:27:52 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/24 11:11:03 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/06 15:48:50 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Harl.hpp"
 
-int main(int argc, char *argv[])
-{
-	Harl		harl;
+int main(int argc, char *argv[]) {
+	Harl harl;
 
 	if (argc != 2) {
 		std::cerr << "Error! Wrong number of arguments. Expected: 1" << std::endl;

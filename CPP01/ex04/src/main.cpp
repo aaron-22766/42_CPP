@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:27:52 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/22 16:20:52 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/06 14:13:42 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	replace(std::string filename, std::string s1, std::string s2) {
 
 int main(int argc, char *argv[]) {
 	if (argc != 4)
-		error("Expexted parameters: [filename] [s1] [s2]");
+		error("Expexted 3 parameters: [filename] [s1] [s2]");
 	replace(argv[1], argv[2], argv[3]);
 	return (EXIT_SUCCESS);
 }
