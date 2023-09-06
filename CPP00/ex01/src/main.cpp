@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 15:22:26 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/21 14:22:22 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:59:37 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ static void	runPhoneBook(std::string pb_name = "My Awesome PhoneBook") {
 
 int	main(int argc, char *argv[]) {
 	if (argc == 1) {
-		return (runPhoneBook(), EXIT_SUCCESS);
+        runPhoneBook();
+		return (EXIT_SUCCESS);
 	}
 	for (int i = 1; i < argc; i++) {
 		runPhoneBook(argv[i]);

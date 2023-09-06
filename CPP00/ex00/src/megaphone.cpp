@@ -6,14 +6,13 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 11:34:43 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/17 14:03:01 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:42:33 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-int	main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 	if (argc < 2) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
 	} else {

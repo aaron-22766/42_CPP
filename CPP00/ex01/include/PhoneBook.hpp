@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 16:27:21 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/21 14:25:39 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:43:40 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,25 @@
 
 class PhoneBook {
 
-	public:
+public:
 
-		PhoneBook(void);
-		~PhoneBook(void);
+    PhoneBook(void);
+    ~PhoneBook(void);
 
-		Contact	getContact(int index) const;
-		int		getContactsCount(void) const;
+    Contact	getContact(int index) const;
+    int		getContactsCount(void) const;
 
-		void	addContact(void);
-		void	searchPhoneBook(void) const;
+    void	addContact(void);
+    void	searchPhoneBook(void) const;
 
-		static std::string	promptForInput(std::string prompt);
+    static std::string	promptForInput(std::string prompt);
 
-	private:
+private:
 
-		Contact	_contacts[MAX_CONTACTS];
-		int		_contacts_count;
+    Contact	_contacts[MAX_CONTACTS];
+    int		_contactsIndex;
+    int     _contactsCount;
+
 };
 
 std::ostream	&operator<<(std::ostream &os, const PhoneBook &phonebook);

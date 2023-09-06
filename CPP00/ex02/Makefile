@@ -6,11 +6,11 @@
 #    By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/14 11:21:33 by arabenst          #+#    #+#              #
-#    Updated: 2023/07/29 16:57:42 by arabenst         ###   ########.fr        #
+#    Updated: 2023/09/06 11:17:20 by arabenst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:=	phonebook
+NAME		:=	tests
 
 INCDIR		:=	./include
 SRCDIR		:=	./src

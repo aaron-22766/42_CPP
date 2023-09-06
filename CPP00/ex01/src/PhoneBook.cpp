@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 15:50:09 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/21 14:26:02 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/05 16:19:19 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) : _contacts_count(0) {}
+PhoneBook::PhoneBook(void) : _contactsIndex(0), _contactsCount(0) {}
 
 PhoneBook::~PhoneBook(void) {}
 
 Contact	PhoneBook::getContact(int index) const {
-	return (this->_contacts[index]);
+	return (_contacts[index]);
 }
 
 int		PhoneBook::getContactsCount(void) const {
-	return (this->_contacts_count);
+	return (_contactsCount);
 }
 
 void	PhoneBook::addContact(void) {
-	if (this->_contacts_count < MAX_CONTACTS) {
-		this->_contacts[this->_contacts_count].newContact();
-	} else {
-		this->_contacts[MAX_CONTACTS - 1].newContact();
-	}
+    _contacts[_contactsIndex].newContact();
+    _contactsIndex = ++_contactsIndex % MAX_CONTACTS;
 	std::cout << "Successfully added new contact";
-	if (this->_contacts_count < MAX_CONTACTS) {
-		this->_contacts_count++;
-	} else {
-		std::cout << " (last got overwritten)";
+    if (_contactsCount == MAX_CONTACTS) {
+		std::cout << " (oldest was replaced)";
 	}
 	std::cout << std::endl;
+    if (_contactsCount < MAX_CONTACTS) {
+        _contactsCount++;
+    }
 }
 
 static bool	isValidInt(const std::string &str) {
@@ -53,18 +51,18 @@ void	PhoneBook::searchPhoneBook(void) const {
 	int			index;
 
 	std::cout << std::endl << *this << std::endl;
-	if (this->_contacts_count == 0) {
+	if (_contactsCount == 0) {
 		return ;
 	}
 	while (true) {
 		input = promptForInput("contact index");
 		index = std::atoi(input.c_str());
-		if (isValidInt(input) && index >= 0 && index < this->_contacts_count) {
-			std::cout << std::endl << this->_contacts[index] << std::endl;
+		if (isValidInt(input) && index >= 0 && index < _contactsCount) {
+			std::cout << std::endl << _contacts[index] << std::endl;
 			return ;
 		}
 		std::cout << "Please enter a number in range 0 - "
-			<< (this->_contacts_count - 1) << std::endl;
+			<< (_contactsCount - 1) << std::endl;
 	}
 }
 

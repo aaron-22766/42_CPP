@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 08:35:22 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/21 14:24:29 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:49:24 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,31 @@ Contact::Contact(void) {}
 Contact::~Contact(void) {}
 
 std::string	Contact::getFirstName(void) const {
-	return (this->_first_name);
+	return (_firstName);
 }
 
 std::string	Contact::getLastName(void) const {
-	return (this->_last_name);
+	return (_lastName);
 }
 
 std::string	Contact::getNickname(void) const {
-	return (this->_nickname);
+	return (_nickname);
 }
 
 std::string	Contact::getPhoneNumber(void) const {
-	return (this->_phone_number);
+	return (_phoneNumber);
 }
 
 std::string	Contact::getDarkestSecret(void) const {
-	return (this->_darkest_secret);
+	return (_darkestSecret);
 }
 
 void	Contact::newContact(void) {
-	this->_first_name = PhoneBook::promptForInput("first name");
-	this->_last_name = PhoneBook::promptForInput("last name");
-	this->_nickname = PhoneBook::promptForInput("nickname");
-	this->_phone_number = PhoneBook::promptForInput("phone number");
-	this->_darkest_secret = PhoneBook::promptForInput("darkest secret");
+	_firstName = PhoneBook::promptForInput("first name");
+	_lastName = PhoneBook::promptForInput("last name");
+	_nickname = PhoneBook::promptForInput("nickname");
+	_phoneNumber = PhoneBook::promptForInput("phone number");
+	_darkestSecret = PhoneBook::promptForInput("darkest secret");
 }
 
 std::ostream	&operator<<(std::ostream &os, const Contact &contact) {
