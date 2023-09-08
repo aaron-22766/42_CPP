@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:33:06 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/06 16:11:17 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/08 10:26:47 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 Zombie::Zombie(std::string zombie_name) : name(zombie_name) {}
 
 Zombie::~Zombie(void) {
-	std::clog << this->name << " has turned to dust" << std::endl;
+	std::clog << name << " has turned to dust" << std::endl;
 }
 
 void Zombie::announce(void) {
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

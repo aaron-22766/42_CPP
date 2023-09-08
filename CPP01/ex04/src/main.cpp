@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:27:52 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/06 14:13:42 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/08 10:53:13 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	error(std::string err) {
 	std::exit(EXIT_FAILURE);
 }
 
-void	replace(std::string filename, std::string s1, std::string s2) {
+void	replaceInFile(std::string filename, std::string s1, std::string s2) {
 	if (s1.empty()) {
 		error("String to find (s1) cannot be empty");
 	}
@@ -30,11 +30,13 @@ void	replace(std::string filename, std::string s1, std::string s2) {
 	std::ofstream	out_file(filename + ".replace");
 	if (out_file.is_open() == false) {
 		in_file.close();
-		error("Unable to open/create output file");
+		error("Unable to create output file");
 	}
+    
 	std::string	line;
 	size_t		sub;
-	while (getline(in_file, line)) {
+    
+	while (std::getline(in_file, line)) {
 		while (!line.empty()) {
 			sub = line.find(s1);
 			if (sub == std::string::npos) {
@@ -52,6 +54,6 @@ void	replace(std::string filename, std::string s1, std::string s2) {
 int main(int argc, char *argv[]) {
 	if (argc != 4)
 		error("Expexted 3 parameters: [filename] [s1] [s2]");
-	replace(argv[1], argv[2], argv[3]);
+	replaceInFile(argv[1], argv[2], argv[3]);
 	return (EXIT_SUCCESS);
 }
