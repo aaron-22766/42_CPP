@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:58:16 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/27 21:30:57 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/08 12:43:21 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ using std::endl;
 using std::left;
 using std::setw;
 using std::boolalpha;
-using std::stof;
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
@@ -33,17 +32,17 @@ int main(int argc, char *argv[]) {
         cout << Fixed::max( a, b ) << endl;
 	    return (EXIT_SUCCESS);
     }
-    Fixed a(stof(argv[1]));
-    const Fixed b(stof(argv[2]));
+    Fixed a(std::stof(argv[1]));
+    const Fixed b(std::stof(argv[2]));
     
     cout << setw(10) << left << a << " ++pre : " << setw(10) << left << ++a
-        << " -> " << setw(10) << left << a << endl;
+         << " -> " << setw(10) << left << a << endl;
     cout << setw(10) << left << a << " --pre : " << setw(10) << left << --a
-        << " -> " << setw(10) << left << a << endl;
+         << " -> " << setw(10) << left << a << endl;
     cout << setw(10) << left << a << " post++: " << setw(10) << left << a++
-        << " -> " << setw(10) << left << a << endl;
+         << " -> " << setw(10) << left << a << endl;
     cout << setw(10) << left << a << " post--: " << setw(10) << left << a--
-        << " -> " << setw(10) << left << a << endl;
+         << " -> " << setw(10) << left << a << endl;
     cout << endl;
 
     cout << a << " >  " << b << " ? " << boolalpha << (a > b) << endl;

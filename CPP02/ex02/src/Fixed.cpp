@@ -6,11 +6,11 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:57:59 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/27 19:05:59 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/08 12:37:50 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Fixed.hpp" 
+#include "../include/Fixed.hpp"
 
 const int Fixed::_numFractionalBits = 8;
 
@@ -64,7 +64,6 @@ Fixed Fixed::operator+(void) const {
 Fixed Fixed::operator-(void) const {
     return (Fixed(*this * -1));
 }
-
 
 Fixed Fixed::operator+(const Fixed &other) const {
     Fixed res;
