@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 18:56:23 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/29 15:28:16 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/09 13:28:07 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int main(void) {
         butterfly->beRepaired(1);
         butterfly->printStats();
         butterfly->takeDamage(5);
+        butterfly->printStats();
+        butterfly->attack("Sauron");
         butterfly->printStats();
         butterfly->attack("Sauron");
         butterfly->printStats();

@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 11:40:32 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/29 17:57:43 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/09 13:49:42 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
 
     using ScavTrap::attack;
     void whoAmI(void) const;
+    void printStats(void) const;
 
 private:
 

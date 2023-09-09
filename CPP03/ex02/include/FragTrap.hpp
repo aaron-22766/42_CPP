@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 11:40:32 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/29 17:13:41 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/09 13:30:48 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
     ~FragTrap(void);
 
     void highFivesGuys(void) const;
+    void printStats(void) const;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 11:40:32 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/29 15:46:07 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/09 13:30:52 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
 
     void attack(const std::string& target);
     void guardGate(void) const;
+    void printStats(void) const;
 
 };
 

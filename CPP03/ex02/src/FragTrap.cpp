@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 18:54:02 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/29 17:13:37 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/09 13:37:43 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ FragTrap::FragTrap(const FragTrap &other) {
 
 FragTrap &FragTrap::operator=(const FragTrap &other) {
     clog << "\033[2mFragTrap copy assignment operator called\033[0m" << endl;
-    _name = other.getName();
-    _health = other.getHealth();
-    _energy = other.getEnergy();
-    _damage = other.getDamage();
+    _name = other._name;
+    _health = other._health;
+    _energy = other._energy;
+    _damage = other._damage;
     return (*this);
 }
 
@@ -59,4 +59,9 @@ FragTrap::~FragTrap(void) {
 void FragTrap::highFivesGuys(void) const {
     cout << "\033[2mFragTrap\033[0m " << _name
          << " wants to high-five all soldiers for winning the battle." << endl;
+}
+
+void FragTrap::printStats(void) const {
+    clog << "\033[2mFragTrap " << _name << " stats: h(" << _health
+         << "), e(" << _energy << "), d(" << _damage << ")\033[0m" << endl;
 }

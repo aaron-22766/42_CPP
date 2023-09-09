@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 18:54:02 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/29 15:02:47 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/09 14:53:16 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ using std::endl;
 /*                          PUBLIC: SPECIAL METHODS                           */
 /* ************************************************************************** */
 
-ClapTrap::ClapTrap(void) : _health(10), _energy(10), _damage(0) {
+ClapTrap::ClapTrap(void) :
+    _name("Unnamed"), _health(10), _energy(10), _damage(0) {
     clog << "\033[2mClapTrap default constructor called\033[0m" << endl;
 }
 
@@ -36,35 +37,15 @@ ClapTrap::ClapTrap(const ClapTrap &other) {
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
     clog << "\033[2mClapTrap copy assignment operator called\033[0m" << endl;
-    _name = other.getName();
-    _health = other.getHealth();
-    _energy = other.getEnergy();
-    _damage = other.getDamage();
+    _name = other._name;
+    _health = other._health;
+    _energy = other._energy;
+    _damage = other._damage;
     return (*this);
 }
 
 ClapTrap::~ClapTrap(void) {
     clog << "\033[2mClapTrap destructor called\033[0m" << endl;
-}
-
-/* ************************************************************************** */
-/*                             PUBLIC: ACCESSORS                              */
-/* ************************************************************************** */
-
-std::string ClapTrap::getName(void) const {
-    return(_name);
-}
-
-unsigned int ClapTrap::getHealth(void) const {
-    return(_health);
-}
-
-unsigned int ClapTrap::getEnergy(void) const {
-    return(_energy);
-}
-
-unsigned int ClapTrap::getDamage(void) const {
-    return(_damage);
 }
 
 /* ************************************************************************** */
@@ -76,9 +57,7 @@ void ClapTrap::attack(const std::string &target) {
         cout << "\033[2mClapTrap\033[0m " << _name << " attacks " << target
              << " causing " << _damage << " points of damage!" << endl;
         _energy--;
-        return ;
-    }
-    if (_health == 0) {
+    } else if (_health == 0) {
         cout << "\033[2mClapTrap\033[0m " << _name
              << " is already dead!" << endl;
     } else if (_energy == 0) {

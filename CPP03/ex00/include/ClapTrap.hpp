@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 18:50:52 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/29 10:43:52 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/09 13:38:36 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ public:
     ClapTrap(const ClapTrap &other);
     ClapTrap &operator=(const ClapTrap &other);
     ~ClapTrap(void);
-    
-    std::string getName(void) const;
-    unsigned int getHealth(void) const;
-    unsigned int getEnergy(void) const;
-    unsigned int getDamage(void) const;
 
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);

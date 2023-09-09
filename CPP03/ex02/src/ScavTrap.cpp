@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 18:54:02 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/29 15:00:34 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/09 13:37:50 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ ScavTrap::ScavTrap(const ScavTrap &other) {
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other) {
     clog << "\033[2mScavTrap copy assignment operator called\033[0m" << endl;
-    _name = other.getName();
-    _health = other.getHealth();
-    _energy = other.getEnergy();
-    _damage = other.getDamage();
+    _name = other._name;
+    _health = other._health;
+    _energy = other._energy;
+    _damage = other._damage;
     return (*this);
 }
 
@@ -61,9 +61,7 @@ void ScavTrap::attack(const std::string &target) {
         cout << "\033[2mScavTrap\033[0m " << _name << " attacks " << target
              << " causing " << _damage << " points of damage!" << endl;
         _energy--;
-        return ;
-    }
-    if (_health == 0) {
+    } else if (_health == 0) {
         cout << "\033[2mScavTrap\033[0m " << _name
              << " is already dead!" << endl;
     } else if (_energy == 0) {
@@ -75,4 +73,9 @@ void ScavTrap::attack(const std::string &target) {
 void ScavTrap::guardGate(void) const {
     cout << "\033[2mScavTrap\033[0m " << _name
          << " guards the gates to Minas Tirith now." << endl;
+}
+
+void ScavTrap::printStats(void) const {
+    clog << "\033[2mScavTrap " << _name << " stats: h(" << _health
+         << "), e(" << _energy << "), d(" << _damage << ")\033[0m" << endl;
 }

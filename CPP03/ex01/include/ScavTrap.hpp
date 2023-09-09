@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 11:40:32 by arabenst          #+#    #+#             */
-/*   Updated: 2023/07/29 15:46:07 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/09 13:30:24 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ public:
     ScavTrap &operator=(const ScavTrap &other);
     ~ScavTrap(void);
 
-    void attack(const std::string& target);
+    void attack(const std::string &target);
     void guardGate(void) const;
+    void printStats(void) const;
 
 };
 
