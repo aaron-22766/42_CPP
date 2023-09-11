@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:58:16 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/08 13:02:43 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/11 10:31:23 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,3 @@ int main(int argc, char *argv[]) {
     test(5, 88, 8, 95, 94, 13, 13, 15); // outside -> ❌
 	return (EXIT_SUCCESS);
 }
-
-// check triangle: https://planetcalc.com/8108/
-// generate triangle: https://jsfiddle.net/PerroAZUL/zdaY8/1/

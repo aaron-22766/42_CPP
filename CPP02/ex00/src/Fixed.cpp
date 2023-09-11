@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:57:59 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/08 11:43:14 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/11 10:05:08 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Fixed::Fixed(const Fixed &other) {
 	*this = other;
 }
 
-Fixed &Fixed::operator = (const Fixed &other) {
+Fixed &Fixed::operator=(const Fixed &other) {
 	clog << "\033[2mCopy assignment operator called\033[0m" << endl;
 	_raw = other.getRawBits();
 	return (*this);
