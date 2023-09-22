@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 08:23:38 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/21 11:56:20 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:41:05 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,10 @@ void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
     << "              └                          └" << endl;
     file.close();
 }
+
+/* ************************************************************************** */
+/*                             PUBLIC: EXCEPTIONS                             */
+/* ************************************************************************** */
 
 const char *ShrubberyCreationForm::FileOpenFailException::what(void) const throw() {
     return ("failed to open file");

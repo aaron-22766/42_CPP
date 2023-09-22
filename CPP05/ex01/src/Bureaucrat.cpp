@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:55:26 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/21 10:03:05 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:41:43 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,10 @@ void Bureaucrat::signForm(Form &form) const {
     cout << endl;
 }
 
+/* ************************************************************************** */
+/*                             PUBLIC: EXCEPTIONS                             */
+/* ************************************************************************** */
+
 const char *Bureaucrat::GradeTooLowException::what(void) const throw() {
     return ("grade is too low");
 }
@@ -90,6 +94,10 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw() {
 const char *Bureaucrat::GradeTooHighException::what(void) const throw() {
     return ("grade is too high");
 }
+
+/* ************************************************************************** */
+/*                             PUBLIC: OVERLOADS                              */
+/* ************************************************************************** */
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &rhs) {
 	return (os << rhs.getName() << " is a bureaucrat with grade " << rhs.getGrade());

@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:55:07 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/21 10:20:01 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:41:51 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,10 @@ void AForm::beSigned(const Bureaucrat &bureaucrat) {
     _isSigned = true;
 }
 
+/* ************************************************************************** */
+/*                             PUBLIC: EXCEPTIONS                             */
+/* ************************************************************************** */
+
 const char *AForm::GradeTooHighException::what(void) const throw() {
     return ("grade is too high");
 }
@@ -98,7 +102,7 @@ void AForm::checkRequirements(const Bureaucrat &bureaucrat) const {
 }
 
 /* ************************************************************************** */
-/*                                  OVERLOAD                                  */
+/*                             PUBLIC: OVERLOADS                              */
 /* ************************************************************************** */
 
 std::ostream &operator<<(std::ostream &os, const AForm &rhs) {

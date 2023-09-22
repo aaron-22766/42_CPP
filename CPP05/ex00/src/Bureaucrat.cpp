@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:55:26 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/21 08:11:11 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:39:57 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ void Bureaucrat::decrementGrade(void) {
     _grade++;
 }
 
+/* ************************************************************************** */
+/*                             PUBLIC: EXCEPTIONS                             */
+/* ************************************************************************** */
+
 const char *Bureaucrat::GradeTooLowException::what(void) const throw() {
     return ("grade is too low");
 }
@@ -75,6 +79,10 @@ const char *Bureaucrat::GradeTooLowException::what(void) const throw() {
 const char *Bureaucrat::GradeTooHighException::what(void) const throw() {
     return ("grade is too high");
 }
+
+/* ************************************************************************** */
+/*                             PUBLIC: OVERLOADS                              */
+/* ************************************************************************** */
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &rhs) {
 	return (os << rhs.getName() << " is a bureaucrat with grade " << rhs.getGrade());

@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:55:07 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/21 09:36:19 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:41:46 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,10 @@ void Form::beSigned(const Bureaucrat &bureaucrat) {
     _isSigned = true;
 }
 
+/* ************************************************************************** */
+/*                             PUBLIC: EXCEPTIONS                             */
+/* ************************************************************************** */
+
 const char *Form::GradeTooHighException::what(void) const throw() {
     return ("grade is too high");
 }
@@ -79,6 +83,10 @@ const char *Form::GradeTooHighException::what(void) const throw() {
 const char *Form::GradeTooLowException::what(void) const throw() {
     return ("grade is too low");
 }
+
+/* ************************************************************************** */
+/*                             PUBLIC: OVERLOADS                              */
+/* ************************************************************************** */
 
 std::ostream &operator<<(std::ostream &os, const Form &rhs) {
     return (os << "|| Form: " << rhs.getName() << endl
