@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:47:00 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/27 11:39:06 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:53:26 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ private:
 
 };
 
-# include "../src/Span.tpp"
+# include "Span.tpp"
 
 #endif

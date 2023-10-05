@@ -6,7 +6,7 @@
 #    By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 15:36:17 by arabenst          #+#    #+#              #
-#    Updated: 2023/09/26 09:41:44 by arabenst         ###   ########.fr        #
+#    Updated: 2023/10/05 11:52:56 by arabenst         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ INCDIR		:=	./include
 SRCDIR		:=	./src
 BUILDDIR	:=	./build
 
-INCS		:=	$(wildcard $(INCDIR)/*.hpp)
+INCS		:=	$(wildcard $(INCDIR)/*.hpp) $(wildcard $(INCDIR)/*.tpp)
 SRCS		:=	$(wildcard $(SRCDIR)/*.cpp)
 OBJS		:=	$(addprefix $(BUILDDIR)/, $(notdir $(SRCS:.cpp=.o)))
 DEPS		:=	$(OBJS:.o=.d)

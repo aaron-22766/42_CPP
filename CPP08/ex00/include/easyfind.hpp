@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:36:39 by arabenst          #+#    #+#             */
-/*   Updated: 2023/10/05 11:04:54 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:53:03 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 
 #include <algorithm>
 #include <iterator>
-#include "../src/easyfind.tpp"
+#include "easyfind.tpp"
 
 #endif

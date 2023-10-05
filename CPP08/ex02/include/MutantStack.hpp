@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:40:04 by arabenst          #+#    #+#             */
-/*   Updated: 2023/10/05 11:09:27 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:54:09 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@
 # include <stack>
 # include <deque>
 # include <iterator>
-# include "../src/MutantStack.tpp"
+# include "MutantStack.tpp"
 
 #endif

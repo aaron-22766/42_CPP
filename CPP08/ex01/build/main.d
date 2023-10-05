@@ -1,2 +1,2 @@
-build/main.o: src/main.cpp src/../include/Span.hpp \
-  include/../src/Span.tpp
+build/main.o: src/main.cpp src/../include/Span.hpp include/Span.tpp \
+  include/Span.hpp

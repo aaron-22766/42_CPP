@@ -1,2 +1,2 @@
 build/main.o: src/main.cpp src/../include/MutantStack.hpp \
-  include/../src/MutantStack.tpp
+  include/MutantStack.tpp include/MutantStack.hpp
