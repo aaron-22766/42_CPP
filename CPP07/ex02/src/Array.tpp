@@ -6,11 +6,42 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:41:11 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/25 14:02:53 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:03:27 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Array.hpp"
+
+/* ************************************************************************** */
+/*                               TEMPLATE CLASS                               */
+/* ************************************************************************** */
+
+template <typename T>
+class Array {
+
+public:
+
+    Array(void);
+    Array(unsigned int n);
+    Array(const Array &other);
+    Array &operator=(const Array &other);
+    ~Array(void);
+
+    unsigned int size(void) const;
+    
+    T &operator[](unsigned int index);
+
+    class OutOfBoundsException : public std::exception {
+    public:
+        virtual const char *what(void) const throw();
+    };
+
+private:
+
+    T *_array;
+    unsigned int _size;
+
+};
 
 /* ************************************************************************** */
 /*                          PUBLIC: SPECIAL METHODS                           */

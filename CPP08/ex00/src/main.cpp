@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:38:21 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/27 11:13:54 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:08:21 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include <vector>
 #include <list>
 #include <deque>
-#include <set>
-// #include <multiset>
 #include <ctime>
 
 using std::cout;
@@ -65,12 +63,6 @@ int main(void) {
 
     std::deque<int> deque(arr, arr + 10);
     testContainer("Deque", deque);
-
-    std::multiset<int> multiset(arr, arr + 10);
-    testContainer("Multiset", multiset);
-
-    std::set<int> set(arr, arr + 10);
-    testContainer("Set", set);
     
     return (EXIT_SUCCESS);
 }

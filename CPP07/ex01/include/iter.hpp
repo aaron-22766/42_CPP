@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:53:12 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/26 08:19:01 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 10:33:28 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 /* ************************************************************************** */
 
 template <typename T>
-void print(T data);
+void print(const T &data);
 
 template <typename T>
-void iter(T *array, size_t len, void (*f)(T));
+void iter(const T *array, const size_t len, void (*f)(const T &));
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:34:19 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/25 10:49:31 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:21:11 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void swap(T &a, T &b) {
 }
 
 template <typename T>
-T min(T &a, T &b) {
+const T &min(const T &a, const T &b) {
     return (a < b ? a : b);
 }
 
 template <typename T>
-T max(T &a, T &b) {
+const T &max(const T &a, const T &b) {
     return (a > b ? a : b);
 }
 

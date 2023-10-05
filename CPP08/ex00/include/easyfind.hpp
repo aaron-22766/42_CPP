@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 15:36:39 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/26 12:05:57 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:04:54 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,6 @@
 
 #include <algorithm>
 #include <iterator>
-
-/* ************************************************************************** */
-/*                             TEMPLATE FUNCTIONS                             */
-/* ************************************************************************** */
-
-template <typename T>
-typename T::iterator easyfind(T &haystack, const int &needle);
-
 #include "../src/easyfind.tpp"
 
 #endif

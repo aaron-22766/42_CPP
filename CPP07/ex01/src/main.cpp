@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:53:32 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/25 12:37:09 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:22:15 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "../include/iter.hpp"
 
 template <typename T>
-void print(T data) {
+void print(const T &data) {
     std::cout << data << std::endl;
 }
 
 template <typename T>
-void iter(T *array, size_t len, void (*f)(T)) {
+void iter(const T *array, const size_t len, void (*f)(const T &)) {
     for (size_t i = 0; i < len; i++) {
         f(array[i]);
     }
@@ -28,7 +28,7 @@ void iter(T *array, size_t len, void (*f)(T)) {
 int main(void) {
     {
         int arr[5] = {72, 3737, 648, 2, 3764};
-        iter(arr, 5, print<int>);
+        iter(arr, 5, print<const int>);
     }
     std::cout << std::endl;
     {
