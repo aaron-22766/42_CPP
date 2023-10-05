@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:41:11 by arabenst          #+#    #+#             */
-/*   Updated: 2023/10/05 11:30:00 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:25:10 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,7 @@ Array<T>::Array(unsigned int n) : _size(n) {
 template <typename T>
 Array<T>::Array(const Array &other) : _size(other._size) {
     _array = new T[_size];
-    for (unsigned int i = 0; i < _size; i++) {
-        _array[i] = other._array[i];
-    }
+    memcpy(_array, other._array, _size * sizeof(T));
 }
 
 template <typename T>
@@ -70,9 +68,7 @@ Array<T> &Array<T>::operator=(const Array &other) {
     delete[] _array;
     _size = other._size;
     _array = new T[_size];
-    for (unsigned int i = 0; i < _size; i++) {
-        _array[i] = other._array[i];
-    }
+    memcpy(_array, other._array, _size * sizeof(T));
     return (*this);
 }
 
