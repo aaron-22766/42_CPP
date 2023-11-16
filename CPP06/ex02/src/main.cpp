@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 09:28:07 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/25 10:30:24 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:36:11 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,13 @@ using std::endl;
 Base *generate(void) {
     switch (std::rand() % 3) {
         case 0:
+            cout << "A";
             return (new A());
         case 1:
+            cout << "B";
             return (new B());
         case 2:
+            cout << "C";
             return (new C());
     }
     return (NULL);
@@ -62,8 +65,11 @@ int main(void) {
     gettimeofday(&tv, NULL);
 	std::srand(tv.tv_usec);
     for (int i = 0; i < 10; i++) {
+        cout << "generate: ";
         Base *ptr = generate();
+        cout << " -> pointer: ";
         identify(ptr);
+        cout << " -> reference: ";
         identify(*ptr);
         cout << endl;
         delete ptr;

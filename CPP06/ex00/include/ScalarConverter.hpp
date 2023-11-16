@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 13:53:21 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/23 20:24:40 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:13:54 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,12 @@ using std::endl;
 /*                                   ENUMS                                    */
 /* ************************************************************************** */
 
-enum e_types {
+typedef enum e_types {
     T_INVALID,
     T_CHAR,
     T_NUM,
     T_SPECIAL
-};
+}   t_types;
 
 /* ************************************************************************** */
 /*                                   CLASS                                    */
@@ -76,7 +76,7 @@ private:
     static void printDouble(void);
 
     static std::string _s;
-    static int8_t _type;
+    static t_types _type;
     static double _value;
 
 };

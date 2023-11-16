@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 14:09:05 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/25 08:23:27 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:14:08 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@ const char *ScalarConverter::InvalidInputException::what(void) const throw() {
 /* ************************************************************************** */
 
 std::string ScalarConverter::_s;
-int8_t ScalarConverter::_type;
+t_types ScalarConverter::_type;
 double ScalarConverter::_value;
