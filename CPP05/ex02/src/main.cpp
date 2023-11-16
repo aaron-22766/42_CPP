@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 15:53:56 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/21 10:37:54 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:21:39 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ using std::cout;
 using std::endl;
 
 int main(void) {
-    try {
+    {
         Bureaucrat b("Bob", 140);
         ShrubberyCreationForm s("home");
         RobotomyRequestForm r("robot");
@@ -35,16 +35,14 @@ int main(void) {
         b.executeForm(p);
         b.signForm(p);
         b.executeForm(p);
-    } catch (std::exception &e) {
-        cout << "Exception caught: " << e.what() << endl;
     }
     cout << endl;
-    try {
-        Bureaucrat b("Zaphod", 1);
-        ShrubberyCreationForm s("Earth 2.0");
+    {
+        Bureaucrat b("Marvin", 1);
         RobotomyRequestForm r("Marvin");
         PresidentialPardonForm p("Arthur Dent");
-        
+        ShrubberyCreationForm s("Earth 2.0");
+
         b.executeForm(s);
         b.signForm(s);
         b.executeForm(s);
@@ -56,7 +54,5 @@ int main(void) {
         b.executeForm(p);
         b.signForm(p);
         b.executeForm(p);
-    } catch (std::exception &e) {
-        cout << "Exception caught: " << e.what() << endl;
     }
 }

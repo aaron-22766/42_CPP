@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:55:07 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/22 12:41:51 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/16 15:19:41 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@ using std::endl;
 /*                          PUBLIC: SPECIAL METHODS                           */
 /* ************************************************************************** */
 
-AForm::AForm(void) : _name("(Unnamed)"), _signGrade(150), _executeGrade(150) {}
+AForm::AForm(void) :
+    _name("(Unnamed)"), _isSigned(false), _signGrade(150), _executeGrade(150) {}
 
 AForm::AForm(std::string name, int signGrade, int executeGrade) :
-    _name(name), _signGrade(signGrade), _executeGrade(executeGrade) {
+    _name(name), _isSigned(false),
+    _signGrade(signGrade), _executeGrade(executeGrade) {
     if (_signGrade < 1 || _executeGrade < 1) {
         throw AForm::GradeTooHighException();
     }
