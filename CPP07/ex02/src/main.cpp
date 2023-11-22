@@ -6,13 +6,14 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:41:26 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/25 14:51:14 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:35:17 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Array.hpp"
 #include <iostream>
 #include <string>
+#include <cstdlib>
 #include <sstream>
 
 using std::cout;
@@ -28,34 +29,35 @@ std::string numberToString(T num)
 
 template <typename T>
 void printArray(Array<T> &array, std::string name) {
-    cout << name << ": " << array.size() << endl << "[";
-    for (unsigned int i = 0; i < array.size(); i++) {
-        cout << array[i] << ((i + 1 != array.size()) ? ", " : "");
+    cout << name << ": (size = " << array.size() << ")" << endl << "[";
+    try {
+        for (unsigned int i = 0; i < array.size() - 1; ++i) {
+            cout << array[i] << ", ";
+        }
+        cout << array[array.size() - 1] << "]" << endl;
+    } catch (std::exception &e) {
+        cout << "Exception: " << e.what() << endl;
     }
-    cout << "]" << endl;
 }
 
 template <typename T>
 void writeStringArray(Array<T> &array, std::string content) {
-    for (unsigned int i = 0; i < array.size(); i++) {
+    for (unsigned int i = 0; i < array.size(); ++i) {
         array[i] = content + "_" + numberToString(i);
     }
 }
 
 int main(void) {
-    try {
+    {
         Array<int> intArray;
-        cout << "intArray: " << intArray.size() << endl;
-        cout << intArray[0];
-    } catch (std::exception &e) {
-        cout << "Exception: " << e.what() << endl;
+        printArray(intArray, "intArray");
     }
     
     cout << endl << std::string(60, '-') << endl << endl;
     
     {
         Array<int> *intArray = new Array<int>(15);
-        for (unsigned int i = 0; i < intArray->size(); i++) {
+        for (unsigned int i = 0; i < intArray->size(); ++i) {
             (*intArray)[i] = i * 9;
         }
         printArray(*intArray, "intArray");
