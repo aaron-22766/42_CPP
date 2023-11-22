@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:47:00 by arabenst          #+#    #+#             */
-/*   Updated: 2023/10/05 11:53:26 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:54:57 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,9 @@ public:
     
     template <typename InputIt>
     void addRange(const InputIt &first, const InputIt &last);
-    
-    typedef std::vector<int>::iterator Iter;
 
 private:
-    
-    static unsigned int distance(const Iter &a, const Iter &b);
-    
+
     class SpanFullException : public std::exception {
     public:
         virtual const char *what(void) const throw();
@@ -61,7 +57,7 @@ private:
         virtual const char *what(void) const throw();
     };
 
-    std::vector<int> _span;
+    std::vector<int> _numbers;
     unsigned int _maxSize;
 
 };

@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:47:29 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/27 11:25:36 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/22 18:09:52 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ Span::Span(const Span &other) {
 
 Span &Span::operator=(const Span &other) {
     _maxSize = other._maxSize;
-    _span.clear();
-    std::copy(other._span.begin(), other._span.end(), _span.begin());
+    _numbers.clear();
+    std::copy(other._numbers.begin(), other._numbers.end(), _numbers.begin());
     return (*this);
 }
 
@@ -38,43 +38,39 @@ Span::~Span(void) {}
 /* ************************************************************************** */
 
 void Span::addNumber(int num) {
-    if (_span.size() == _maxSize) {
+    if (_numbers.size() == _maxSize) {
         throw Span::SpanFullException();
     } else {
-        _span.push_back(num);
+        _numbers.push_back(num);
     }
 }
 
 unsigned int Span::shortestSpan(void) {
-    if (_span.size() < 2) {
+    if (_numbers.size() < 2) {
         throw Span::NoSpanFound();
     }
+
+    std::vector<int> sorted = _numbers;
+    std::sort(sorted.begin(), sorted.end());
+    
     unsigned int shortest = -1;
-    for (Span::Iter it1 = _span.begin(); it1 != --_span.end(); it1++) {
-        for (Span::Iter it2 = (it1 + 1); it2 != _span.end(); it2++) {
-            unsigned int dist = Span::distance(it1, it2);
-            if (dist < shortest) {
-                shortest = dist;
-            }
+    unsigned int tempSpan;
+
+    for (size_t i = 1; i < sorted.size(); ++i) {
+        tempSpan = sorted[i] - sorted[i - 1];
+        if (tempSpan < shortest) {
+            shortest = tempSpan;
         }
     }
     return (shortest);
 }
 
 unsigned int Span::longestSpan(void) {
-    if (_span.size() < 2) {
+    if (_numbers.size() < 2) {
         throw Span::NoSpanFound();
     }
-    return (Span::distance(std::max_element(_span.begin(), _span.end()),
-                           std::min_element(_span.begin(), _span.end())));
-}
-
-/* ************************************************************************** */
-/*                          PRIVATE: STATIC METHODS                           */
-/* ************************************************************************** */
-
-unsigned int Span::distance(const Span::Iter &a, const Span::Iter &b) {
-    return (std::abs(*a - *b));
+    return (*std::max_element(_numbers.begin(), _numbers.end())
+            - *std::min_element(_numbers.begin(), _numbers.end()));
 }
 
 /* ************************************************************************** */

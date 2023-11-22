@@ -6,12 +6,13 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:42:23 by arabenst          #+#    #+#             */
-/*   Updated: 2023/09/27 17:11:14 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/22 18:44:21 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/MutantStack.hpp"
 #include <iostream>
+#include <cstdlib>
 #include <list>
 
 using std::cout;
