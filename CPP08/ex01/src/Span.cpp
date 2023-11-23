@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:47:29 by arabenst          #+#    #+#             */
-/*   Updated: 2023/11/22 18:09:52 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/23 10:30:20 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ unsigned int Span::shortestSpan(void) {
     unsigned int shortest = -1;
     unsigned int tempSpan;
 
-    for (size_t i = 1; i < sorted.size(); ++i) {
+    for (size_t i = 1; i < sorted.size() && shortest; ++i) {
         tempSpan = sorted[i] - sorted[i - 1];
         if (tempSpan < shortest) {
             shortest = tempSpan;

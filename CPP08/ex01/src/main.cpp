@@ -6,7 +6,7 @@
 /*   By: arabenst <arabenst@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 13:46:55 by arabenst          #+#    #+#             */
-/*   Updated: 2023/11/22 18:08:41 by arabenst         ###   ########.fr       */
+/*   Updated: 2023/11/23 10:39:01 by arabenst         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,13 +100,15 @@ int main(void) {
     }
     cout << endl;
     {
+        size_t many_elements = 10000000;
+        
         std::srand(std::time(NULL));
         std::vector<int> vec;
-        for (int i = 0; i < 20000; i++) {
-            vec.push_back(std::rand());
+        for (size_t i = 0; i < many_elements; ++i) {
+            vec.push_back(std::rand() % many_elements);
         }
         
-        Span sp(20000);
+        Span sp(many_elements);
         tryAddRange(sp, vec.begin(), vec.end());
         tryShortestSpan(sp);
         tryLongestSpan(sp);
