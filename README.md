@@ -18,19 +18,6 @@
 
 ---
 
-- [📯 General info](#-general-info)
-- [CPP 00](#cpp-00)
-- [CPP 01](#cpp-01)
-- [CPP 02](#cpp-02)
-- [CPP 03](#cpp-03)
-- [CPP 04](#cpp-04)
-- [CPP 05](#cpp-05)
-- [CPP 06](#cpp-06)
-- [CPP 07](#cpp-07)
-- [CPP 08](#cpp-08)
-- [CPP 09](#cpp-09)
-
-
 ## 📯 General info
 
 * We have to use C++98 and compile with the `-std=c++98` flag (be careful, the macOS `c++` compiler sometimes doesn't warns you if you're using newer features, so make sure to compile on Linux to be safe)
@@ -44,9 +31,21 @@
 * No function implementation in a header file
 * Headers must have **include guards**
 
+### Jump to module
+- [CPP 00](#cpp-00)
+- [CPP 01](#cpp-01)
+- [CPP 02](#cpp-02)
+- [CPP 03](#cpp-03)
+- [CPP 04](#cpp-04)
+- [CPP 05](#cpp-05)
+- [CPP 06](#cpp-06)
+- [CPP 07](#cpp-07)
+- [CPP 08](#cpp-08)
+- [CPP 09](#cpp-09)
+
 ## CPP 00
 
-<b><i>Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff</i></b>
+> Namespaces, classes, member functions, stdio streams, initialization lists, static, const, and some other basic stuff
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
@@ -56,7 +55,7 @@
 
 ## CPP 01
 
-<b><i>Memory allocation, pointers to members, references, switch statement</i></b>
+> Memory allocation, pointers to members, references, switch statement
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
@@ -70,7 +69,7 @@
 
 ## CPP 02
 
-<b><i>Ad-hoc polymorphism, operator overloading and Orthodox Canonical class form</i></b>
+> Ad-hoc polymorphism, operator overloading and Orthodox Canonical class form
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
@@ -81,7 +80,7 @@
 
 ## CPP 03
 
-<b><i>Inheritance</i></b>
+> Inheritance
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
@@ -92,7 +91,7 @@
 
 ## CPP 04
 
-<b><i>Subtype polymorphism, abstract classes, interfaces</i></b>
+> Subtype polymorphism, abstract classes, interfaces
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
@@ -103,7 +102,7 @@
 
 ## CPP 05
 
-<b><i>Repetition and Exceptions</i></b>
+> Repetition and Exceptions
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
@@ -114,7 +113,7 @@
 
 ## CPP 06
 
-<b><i>C++ casts</i></b>
+> C++ casts
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
@@ -124,7 +123,7 @@
 
 ## CPP 07
 
-<b><i>C++ templates</i></b>
+> C++ templates
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
@@ -134,7 +133,7 @@
 
 ## CPP 08
 
-<b><i>Templated containers, iterators, algorithms</i></b>
+> Templated containers, iterators, algorithms
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
@@ -144,10 +143,12 @@
 
 ## CPP 09
 
-<b><i>STL</i></b>
+> STL
 
 | Exercise | Desription | Learnings |
 |----------|------------|-----------|
 | **00: Bitcoin Exchange** | <ul><li>btc program takes file as argument which is a list of dates and values</li><li>prints the value multiplied the exchange rate according to the date indicated in a database 'csv' file</li></ul> | <ul><li>`std::map` for key-value pairs</li><li>`std:lower_bound` returns the first element smaller than value</li><li>`std::string::compare`</li><li>`std::runtime_error` for clean exception throwing</li><li>overall working on a larger project with many C++ features</li></ul> |
 | **01: Reverse Polish Notation** | <ul><li>RPN program takes string of digits and operations `+`, `-`, `*` and `/` and calculates the result in **Reverse Polish Notation**</li></ul> | <ul><li>what **Reverse Polish Notation** is</li><li>`std::stack` is ideal for pushing numbers ontop then popping and calculating the top two when there is an operation and pushing pushing the result back</li></ul> |
 | **02: PmergeMe** | <ul><li>PmergeMe program takes a positive integer sequence and uses **merge-insertion-sort** aka **Ford Johnson** algorithm on two containers to print a sorted sequence as well as the time it took</li><li>algorithm: splits sequence into pairs, sorts each pair, recursively **merge-sort**s the pairs according to the first value, creates a sequence of all firsts of the pairs, uses **Jacobsthal** sequence to efficiently insert the sequence of seconds of the pairs into the result sequence using **insertion-sort**</li></ul> | <ul><li>**Ford Johnson** algorithm is one of the best when it comes to low number of comparisons</li><li>what's the **Jacobsthal** sequence and why does it make the algorithm efficient</li><li>`std::vector` and `std::deque` with their methods</li><li>`std::upper_bound` which is implemented as **binary-search** (required for insersion-sort)</li></ul> |
+
+<p align="center">Made it! 🥵</p>
