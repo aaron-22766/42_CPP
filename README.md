@@ -18,6 +18,19 @@
 
 ---
 
+- [📯 General info](#-general-info)
+- [CPP 00](#cpp-00)
+- [CPP 01](#cpp-01)
+- [CPP 02](#cpp-02)
+- [CPP 03](#cpp-03)
+- [CPP 04](#cpp-04)
+- [CPP 05](#cpp-05)
+- [CPP 06](#cpp-06)
+- [CPP 07](#cpp-07)
+- [CPP 08](#cpp-08)
+- [CPP 09](#cpp-09)
+
+
 ## 📯 General info
 
 * We have to use C++98 and compile with the `-std=c++98` flag (be careful, the macOS `c++` compiler sometimes doesn't warns you if you're using newer features, so make sure to compile on Linux to be safe)
