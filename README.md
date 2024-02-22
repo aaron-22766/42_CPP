@@ -2,7 +2,7 @@
 	<p>
 	C++ Modules
 	</p>
-	<img src="https://github.com/ayogun/42-project-badges/blob/main/badges/cppe.png">
+	<img src="https://github.com/aaron-22766/aaron-22766/blob/main/42-badges/cppe.png">
 </h1>
 
 <p align="center">
@@ -32,6 +32,8 @@
 * Headers must have **include guards**
 
 ### Jump to module
+- [📯 General info](#-general-info)
+  - [Jump to module](#jump-to-module)
 - [CPP 00](#cpp-00)
 - [CPP 01](#cpp-01)
 - [CPP 02](#cpp-02)
