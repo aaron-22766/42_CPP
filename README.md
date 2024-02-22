@@ -32,8 +32,7 @@
 * Headers must have **include guards**
 
 ### Jump to module
-- [📯 General info](#-general-info)
-  - [Jump to module](#jump-to-module)
+
 - [CPP 00](#cpp-00)
 - [CPP 01](#cpp-01)
 - [CPP 02](#cpp-02)
